@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		04E550191C4D1B670051DCB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E550181C4D1B670051DCB5 /* main.m */; };
 		04E5501C1C4D1B670051DCB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E5501B1C4D1B670051DCB5 /* AppDelegate.m */; };
-		04E5501F1C4D1B670051DCB5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E5501E1C4D1B670051DCB5 /* ViewController.m */; };
-		04E550221C4D1B670051DCB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E550201C4D1B670051DCB5 /* Main.storyboard */; };
 		04E550241C4D1B670051DCB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E550231C4D1B670051DCB5 /* Assets.xcassets */; };
-		04E550271C4D1B670051DCB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E550251C4D1B670051DCB5 /* LaunchScreen.storyboard */; };
 		04E550321C4D1B670051DCB5 /* clockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E550311C4D1B670051DCB5 /* clockTests.m */; };
 		04E5503D1C4D1B670051DCB5 /* clockUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E5503C1C4D1B670051DCB5 /* clockUITests.m */; };
+		04E5504B1C4D1C280051DCB5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E5504A1C4D1C280051DCB5 /* Default-568h@2x.png */; };
+		04E5504F1C4D1D100051DCB5 /* WordTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E5504D1C4D1D100051DCB5 /* WordTimeViewController.m */; };
+		04E550531C4D237B0051DCB5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E550521C4D237B0051DCB5 /* MainViewController.m */; };
+		04E550561C4D30AE0051DCB5 /* WordTimeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E550551C4D30AE0051DCB5 /* WordTimeTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,11 +40,7 @@
 		04E550181C4D1B670051DCB5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04E5501A1C4D1B670051DCB5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04E5501B1C4D1B670051DCB5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		04E5501D1C4D1B670051DCB5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		04E5501E1C4D1B670051DCB5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		04E550211C4D1B670051DCB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04E550231C4D1B670051DCB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		04E550261C4D1B670051DCB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04E550281C4D1B670051DCB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04E5502D1C4D1B670051DCB5 /* clockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = clockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E550311C4D1B670051DCB5 /* clockTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = clockTests.m; sourceTree = "<group>"; };
@@ -51,6 +48,13 @@
 		04E550381C4D1B670051DCB5 /* clockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = clockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E5503C1C4D1B670051DCB5 /* clockUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = clockUITests.m; sourceTree = "<group>"; };
 		04E5503E1C4D1B670051DCB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04E5504A1C4D1C280051DCB5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		04E5504C1C4D1D100051DCB5 /* WordTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordTimeViewController.h; sourceTree = "<group>"; };
+		04E5504D1C4D1D100051DCB5 /* WordTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordTimeViewController.m; sourceTree = "<group>"; };
+		04E550511C4D237B0051DCB5 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		04E550521C4D237B0051DCB5 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		04E550541C4D30AE0051DCB5 /* WordTimeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordTimeTableViewController.h; sourceTree = "<group>"; };
+		04E550551C4D30AE0051DCB5 /* WordTimeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordTimeTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 		04E5500B1C4D1B670051DCB5 = {
 			isa = PBXGroup;
 			children = (
+				04E5504A1C4D1C280051DCB5 /* Default-568h@2x.png */,
 				04E550161C4D1B670051DCB5 /* clock */,
 				04E550301C4D1B670051DCB5 /* clockTests */,
 				04E5503B1C4D1B670051DCB5 /* clockUITests */,
@@ -103,11 +108,13 @@
 			children = (
 				04E5501A1C4D1B670051DCB5 /* AppDelegate.h */,
 				04E5501B1C4D1B670051DCB5 /* AppDelegate.m */,
-				04E5501D1C4D1B670051DCB5 /* ViewController.h */,
-				04E5501E1C4D1B670051DCB5 /* ViewController.m */,
-				04E550201C4D1B670051DCB5 /* Main.storyboard */,
+				04E550511C4D237B0051DCB5 /* MainViewController.h */,
+				04E550521C4D237B0051DCB5 /* MainViewController.m */,
+				04E5504C1C4D1D100051DCB5 /* WordTimeViewController.h */,
+				04E5504D1C4D1D100051DCB5 /* WordTimeViewController.m */,
+				04E550541C4D30AE0051DCB5 /* WordTimeTableViewController.h */,
+				04E550551C4D30AE0051DCB5 /* WordTimeTableViewController.m */,
 				04E550231C4D1B670051DCB5 /* Assets.xcassets */,
-				04E550251C4D1B670051DCB5 /* LaunchScreen.storyboard */,
 				04E550281C4D1B670051DCB5 /* Info.plist */,
 				04E550171C4D1B670051DCB5 /* Supporting Files */,
 			);
@@ -243,9 +250,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04E550271C4D1B670051DCB5 /* LaunchScreen.storyboard in Resources */,
 				04E550241C4D1B670051DCB5 /* Assets.xcassets in Resources */,
-				04E550221C4D1B670051DCB5 /* Main.storyboard in Resources */,
+				04E5504B1C4D1C280051DCB5 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,9 +276,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04E5501F1C4D1B670051DCB5 /* ViewController.m in Sources */,
+				04E5504F1C4D1D100051DCB5 /* WordTimeViewController.m in Sources */,
 				04E5501C1C4D1B670051DCB5 /* AppDelegate.m in Sources */,
 				04E550191C4D1B670051DCB5 /* main.m in Sources */,
+				04E550561C4D30AE0051DCB5 /* WordTimeTableViewController.m in Sources */,
+				04E550531C4D237B0051DCB5 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,25 +314,6 @@
 			targetProxy = 04E550391C4D1B670051DCB5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		04E550201C4D1B670051DCB5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04E550211C4D1B670051DCB5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		04E550251C4D1B670051DCB5 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04E550261C4D1B670051DCB5 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		04E5503F1C4D1B670051DCB5 /* Debug */ = {
@@ -412,6 +401,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = clock/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Qter.clock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -423,6 +413,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = clock/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Qter.clock;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MainViewController.h
 //  clock
 //
 //  Created by Mac on 16/1/18.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface MainViewController : UITabBarController
 
 @end
-
