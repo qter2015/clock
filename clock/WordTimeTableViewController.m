@@ -7,8 +7,11 @@
 //
 
 #import "WordTimeTableViewController.h"
+#import "WordTimeTableViewCell.h"
 
-@interface WordTimeTableViewController ()
+@interface WordTimeTableViewController (){
+    NSMutableArray *wordTimeArray;
+}
 
 @end
 
@@ -19,6 +22,15 @@
     
     //创建导航栏
     [self createNavBar];
+    
+    wordTimeArray = [[NSMutableArray alloc]init];
+    for (int i = 0; i < 4; i++) {
+        [wordTimeArray addObject:[NSString stringWithFormat:@"MyCellDemon%i",i]];
+    }
+    
+    //定义表格的行高
+    self.tableView.rowHeight = 91.f;
+    //[self.tableView registerClass:[WordTimeTableViewCell class] forCellReuseIdentifier:@"WordTimeTableViewCell"];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -33,21 +45,27 @@
     UIColor *redColor = [UIColor colorWithRed:0.992 green:0.004 blue:0.004 alpha:1.00];
     UIColor *blackColor = [UIColor colorWithRed:0.078 green:0.078 blue:0.078 alpha:1.00];
     
-    //左按钮
-    UIBarButtonItem *editButtonItem = [[UIBarButtonItem alloc]init];
+    //左编辑按钮
+    UIBarButtonItem *editButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(editButtonItem)];
     [editButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:redColor, NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
-    editButtonItem.title = @"编辑";
-    [editButtonItem setStyle:UIBarButtonItemStylePlain];
     self.navigationItem.leftBarButtonItem = editButtonItem;
-    //右按钮
-    UIBarButtonItem *addButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addWordTimeClick)];
+    //右增加按钮
+    UIBarButtonItem *addButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonItemClick)];
     [addButtonItem setTintColor:redColor];
     self.navigationItem.rightBarButtonItems = @[addButtonItem];
     
-    self.title = @"世界时间";
+    //标题
+    UILabel *titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 60, 20)];
+    [titleView setText:@"世界时间"];
+    [titleView setTextColor:blackColor];
+    [self.navigationItem setTitleView:titleView];
 }
 
-- (void) addWordTimeClick{
+- (void) editButtonItemClick{
+    NSLog(@"edit click");
+}
+
+- (void) addButtonItemClick{
     NSLog(@"addWordTime click");
 }
 
@@ -60,23 +78,27 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
-    return 0;
+    return [wordTimeArray count];
 }
 
-/*
+
+//自定义cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    WordTimeTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"WordTimeTableViewCell"];
+    if (!cell)
+    {
+        [tableView registerNib:[UINib nibWithNibName:@"WordTimeTableViewCell" bundle:nil] forCellReuseIdentifier:@"WordTimeTableViewCell"];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"WordTimeTableViewCell"];
+    }
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.

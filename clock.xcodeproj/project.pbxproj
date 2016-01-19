@@ -16,6 +16,8 @@
 		04E5504F1C4D1D100051DCB5 /* WordTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E5504D1C4D1D100051DCB5 /* WordTimeViewController.m */; };
 		04E550531C4D237B0051DCB5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E550521C4D237B0051DCB5 /* MainViewController.m */; };
 		04E550561C4D30AE0051DCB5 /* WordTimeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E550551C4D30AE0051DCB5 /* WordTimeTableViewController.m */; };
+		04F9FF6C1C4E6F6400E61A01 /* WordTimeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F9FF6A1C4E6F6400E61A01 /* WordTimeTableViewCell.m */; };
+		04F9FF6D1C4E6F6400E61A01 /* WordTimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F9FF6B1C4E6F6400E61A01 /* WordTimeTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,9 @@
 		04E550521C4D237B0051DCB5 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		04E550541C4D30AE0051DCB5 /* WordTimeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordTimeTableViewController.h; sourceTree = "<group>"; };
 		04E550551C4D30AE0051DCB5 /* WordTimeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordTimeTableViewController.m; sourceTree = "<group>"; };
+		04F9FF691C4E6F6400E61A01 /* WordTimeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordTimeTableViewCell.h; sourceTree = "<group>"; };
+		04F9FF6A1C4E6F6400E61A01 /* WordTimeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordTimeTableViewCell.m; sourceTree = "<group>"; };
+		04F9FF6B1C4E6F6400E61A01 /* WordTimeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WordTimeTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +119,9 @@
 				04E5504D1C4D1D100051DCB5 /* WordTimeViewController.m */,
 				04E550541C4D30AE0051DCB5 /* WordTimeTableViewController.h */,
 				04E550551C4D30AE0051DCB5 /* WordTimeTableViewController.m */,
+				04F9FF691C4E6F6400E61A01 /* WordTimeTableViewCell.h */,
+				04F9FF6A1C4E6F6400E61A01 /* WordTimeTableViewCell.m */,
+				04F9FF6B1C4E6F6400E61A01 /* WordTimeTableViewCell.xib */,
 				04E550231C4D1B670051DCB5 /* Assets.xcassets */,
 				04E550281C4D1B670051DCB5 /* Info.plist */,
 				04E550171C4D1B670051DCB5 /* Supporting Files */,
@@ -250,6 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F9FF6D1C4E6F6400E61A01 /* WordTimeTableViewCell.xib in Resources */,
 				04E550241C4D1B670051DCB5 /* Assets.xcassets in Resources */,
 				04E5504B1C4D1C280051DCB5 /* Default-568h@2x.png in Resources */,
 			);
@@ -276,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F9FF6C1C4E6F6400E61A01 /* WordTimeTableViewCell.m in Sources */,
 				04E5504F1C4D1D100051DCB5 /* WordTimeViewController.m in Sources */,
 				04E5501C1C4D1B670051DCB5 /* AppDelegate.m in Sources */,
 				04E550191C4D1B670051DCB5 /* main.m in Sources */,
@@ -487,6 +497,7 @@
 				04E550431C4D1B670051DCB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04E550441C4D1B670051DCB5 /* Build configuration list for PBXNativeTarget "clockTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +506,7 @@
 				04E550461C4D1B670051DCB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04E550471C4D1B670051DCB5 /* Build configuration list for PBXNativeTarget "clockUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +515,7 @@
 				04E550491C4D1B670051DCB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
