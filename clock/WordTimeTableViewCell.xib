@@ -33,17 +33,31 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock.png" translatesAutoresizingMaskIntoConstraints="NO" id="z9N-jN-Lbd">
+                        <rect key="frame" x="657" y="-2" width="96" height="96"/>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="z9N-jN-Lbd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-10" id="6Oy-5d-Xky"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="YRM-Je-C0f" secondAttribute="trailing" constant="16" id="CJR-Ly-L4J"/>
                     <constraint firstItem="to5-N5-fT3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="19" id="GYu-uI-46g"/>
-                    <constraint firstItem="YRM-Je-C0f" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="9" id="Jrv-t0-Pi2"/>
                     <constraint firstItem="89P-Cn-W0f" firstAttribute="top" secondItem="to5-N5-fT3" secondAttribute="bottom" constant="4" id="d0p-Ap-PkK"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="YRM-Je-C0f" secondAttribute="trailing" constant="16" id="g8w-2P-FBM"/>
                     <constraint firstItem="89P-Cn-W0f" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="13" id="jF1-ha-zdR"/>
+                    <constraint firstItem="YRM-Je-C0f" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="9" id="mq7-eN-kXX"/>
                     <constraint firstItem="to5-N5-fT3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="13" id="uFC-jA-lEB"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="z9N-jN-Lbd" secondAttribute="trailing" constant="16" id="vZg-3s-CZd"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="cityLabel" destination="to5-N5-fT3" id="8fC-7E-QLY"/>
+                <outlet property="clockImg" destination="z9N-jN-Lbd" id="MJ3-zt-Bdr"/>
+                <outlet property="dateLabel" destination="89P-Cn-W0f" id="tLh-dY-noU"/>
+                <outlet property="timeLabel" destination="YRM-Je-C0f" id="oXm-es-NEt"/>
+            </connections>
             <point key="canvasLocation" x="550.5" y="237"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="clock.png" width="96" height="96"/>
+    </resources>
 </document>

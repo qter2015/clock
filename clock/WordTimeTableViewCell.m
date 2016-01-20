@@ -8,6 +8,13 @@
 
 #import "WordTimeTableViewCell.h"
 
+@interface WordTimeTableViewCell()
+{
+    
+}
+
+@end
+
 @implementation WordTimeTableViewCell
 
 - (void)awakeFromNib {

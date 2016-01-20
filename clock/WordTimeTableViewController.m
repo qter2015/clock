@@ -8,9 +8,13 @@
 
 #import "WordTimeTableViewController.h"
 #import "WordTimeTableViewCell.h"
+#import "CitySelectViewController.h"
 
 @interface WordTimeTableViewController (){
     NSMutableArray *wordTimeArray;
+    
+    UIBarButtonItem *editButtonItem;
+    UIBarButtonItem *addButtonItem;
 }
 
 @end
@@ -29,14 +33,14 @@
     }
     
     //定义表格的行高
-    self.tableView.rowHeight = 91.f;
-    //[self.tableView registerClass:[WordTimeTableViewCell class] forCellReuseIdentifier:@"WordTimeTableViewCell"];
+    self.tableView.rowHeight = 90.f;
+    [self.tableView registerNib:[UINib nibWithNibName:@"WordTimeTableViewCell" bundle:nil] forCellReuseIdentifier:@"WordTimeTableViewCell"];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    //tableview 背景色
+    [self.tableView setBackgroundColor:[UIColor colorWithRed:0.937 green:0.937 blue:0.957 alpha:1.00]];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //没内容不显示cell
+    self.tableView.tableFooterView = [[UIView alloc] init];
 }
 
 //初始化导航栏
@@ -46,11 +50,11 @@
     UIColor *blackColor = [UIColor colorWithRed:0.078 green:0.078 blue:0.078 alpha:1.00];
     
     //左编辑按钮
-    UIBarButtonItem *editButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(editButtonItem)];
+    editButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(editButtonItemClick)];
     [editButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:redColor, NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
     self.navigationItem.leftBarButtonItem = editButtonItem;
     //右增加按钮
-    UIBarButtonItem *addButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonItemClick)];
+    addButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonItemClick)];
     [addButtonItem setTintColor:redColor];
     self.navigationItem.rightBarButtonItems = @[addButtonItem];
     
@@ -59,14 +63,45 @@
     [titleView setText:@"世界时间"];
     [titleView setTextColor:blackColor];
     [self.navigationItem setTitleView:titleView];
+    
+    //设置高度
+    CGRect navigationBarFrameOld = self.navigationController.navigationBar.frame;
+    NSLog(@"%f", navigationBarFrameOld.size.height);
+    navigationBarFrameOld.size.height = 100;
+    self.navigationController.navigationBar.frame = navigationBarFrameOld;
+    navigationBarFrameOld = self.navigationController.navigationBar.frame;
+    NSLog(@"%f", navigationBarFrameOld.size.height);
 }
 
 - (void) editButtonItemClick{
-    NSLog(@"edit click");
+    if (self.tableView.editing) {
+        [editButtonItem setTitle:@"编辑"];
+        //设置编辑状态
+        [self.tableView setEditing:NO animated:YES];
+    }
+    else{
+        [editButtonItem setTitle:@"完成"];
+        //设置编辑状态
+        [self.tableView setEditing:YES animated:YES];
+        
+        //隐藏label
+        /*
+        NSUInteger rowCount = wordTimeArray.count;
+        for (NSUInteger i = 1; i <= rowCount; i++) {
+            WordTimeTableViewCell* cell=[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathWithIndex:i]];
+            
+            [cell.timeLabel setHidden:TRUE];
+        }
+        */
+    }
+    
 }
 
 - (void) addButtonItemClick{
-    NSLog(@"addWordTime click");
+    //从下而上弹出模态页面
+    CitySelectViewController *citySelectVC = [[CitySelectViewController alloc]initWithNibName:@"CitySelectViewController" bundle:nil];
+    
+    [self presentViewController:citySelectVC animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -91,11 +126,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     WordTimeTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"WordTimeTableViewCell"];
-    if (!cell)
-    {
-        [tableView registerNib:[UINib nibWithNibName:@"WordTimeTableViewCell" bundle:nil] forCellReuseIdentifier:@"WordTimeTableViewCell"];
-        cell = [tableView dequeueReusableCellWithIdentifier:@"WordTimeTableViewCell"];
-    }
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }
@@ -120,11 +152,11 @@
 }
 */
 
-/*
+
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
 }
-*/
+
 
 /*
 // Override to support conditional rearranging of the table view.
