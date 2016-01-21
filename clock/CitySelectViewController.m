@@ -10,6 +10,9 @@
 
 @interface CitySelectViewController ()
 
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
+@property (weak, nonatomic) IBOutlet UITableView *cityTableView;
 @end
 
 @implementation CitySelectViewController
@@ -17,6 +20,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    //设置外观
+    //设置searchbar颜色
+    [self.searchBar setBarTintColor:[UIColor colorWithRed:0.949 green:0.949 blue:0.957 alpha:1.00]];
+    //去除search上下边框
+    [[[[self.searchBar . subviews objectAtIndex : 0 ] subviews ] objectAtIndex : 0 ] removeFromSuperview ];
+    [self.searchBar setBackgroundColor :[ UIColor clearColor ]];
+    //设置按钮颜色
+    [self.cancelButton setTitleColor:[UIColor colorWithRed:0.988 green:0.012 blue:0.000 alpha:1.00] forState:UIControlStateNormal];
+    
 }
 
 - (IBAction)cancelClick:(id)sender {

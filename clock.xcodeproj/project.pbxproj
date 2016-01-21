@@ -11,6 +11,9 @@
 		040D48AD1C4FD8F500B6E736 /* CitySelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D48AB1C4FD8F500B6E736 /* CitySelectViewController.m */; };
 		040D48AE1C4FD8F500B6E736 /* CitySelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040D48AC1C4FD8F500B6E736 /* CitySelectViewController.xib */; };
 		040D48B01C4FDCB000B6E736 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 040D48AF1C4FDCB000B6E736 /* clock.png */; };
+		045A89311C511A5F004CDFF6 /* WordTimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 045A89301C511A5F004CDFF6 /* WordTimeModel.m */; };
+		045A89371C511DAB004CDFF6 /* CitySelectNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 045A89361C511DAB004CDFF6 /* CitySelectNavigationBar.m */; };
+		045A89391C511DD9004CDFF6 /* CitySelectNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045A89381C511DD9004CDFF6 /* CitySelectNavigationBar.xib */; };
 		04E550191C4D1B670051DCB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E550181C4D1B670051DCB5 /* main.m */; };
 		04E5501C1C4D1B670051DCB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E5501B1C4D1B670051DCB5 /* AppDelegate.m */; };
 		04E550241C4D1B670051DCB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E550231C4D1B670051DCB5 /* Assets.xcassets */; };
@@ -46,6 +49,11 @@
 		040D48AB1C4FD8F500B6E736 /* CitySelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitySelectViewController.m; sourceTree = "<group>"; };
 		040D48AC1C4FD8F500B6E736 /* CitySelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CitySelectViewController.xib; sourceTree = "<group>"; };
 		040D48AF1C4FDCB000B6E736 /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
+		045A892F1C511A5F004CDFF6 /* WordTimeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordTimeModel.h; sourceTree = "<group>"; };
+		045A89301C511A5F004CDFF6 /* WordTimeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordTimeModel.m; sourceTree = "<group>"; };
+		045A89351C511DAB004CDFF6 /* CitySelectNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitySelectNavigationBar.h; sourceTree = "<group>"; };
+		045A89361C511DAB004CDFF6 /* CitySelectNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitySelectNavigationBar.m; sourceTree = "<group>"; };
+		045A89381C511DD9004CDFF6 /* CitySelectNavigationBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CitySelectNavigationBar.xib; sourceTree = "<group>"; };
 		04E550141C4D1B670051DCB5 /* clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E550181C4D1B670051DCB5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04E5501A1C4D1B670051DCB5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -102,6 +110,44 @@
 			name = images;
 			sourceTree = "<group>";
 		};
+		045A89321C511A65004CDFF6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				045A892F1C511A5F004CDFF6 /* WordTimeModel.h */,
+				045A89301C511A5F004CDFF6 /* WordTimeModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		045A89331C511A73004CDFF6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04F9FF691C4E6F6400E61A01 /* WordTimeTableViewCell.h */,
+				04F9FF6A1C4E6F6400E61A01 /* WordTimeTableViewCell.m */,
+				04F9FF6B1C4E6F6400E61A01 /* WordTimeTableViewCell.xib */,
+				045A89351C511DAB004CDFF6 /* CitySelectNavigationBar.h */,
+				045A89361C511DAB004CDFF6 /* CitySelectNavigationBar.m */,
+				045A89381C511DD9004CDFF6 /* CitySelectNavigationBar.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		045A89341C511AA8004CDFF6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04E550511C4D237B0051DCB5 /* MainViewController.h */,
+				04E550521C4D237B0051DCB5 /* MainViewController.m */,
+				04E5504C1C4D1D100051DCB5 /* WordTimeViewController.h */,
+				04E5504D1C4D1D100051DCB5 /* WordTimeViewController.m */,
+				04E550541C4D30AE0051DCB5 /* WordTimeTableViewController.h */,
+				04E550551C4D30AE0051DCB5 /* WordTimeTableViewController.m */,
+				040D48AA1C4FD8F500B6E736 /* CitySelectViewController.h */,
+				040D48AB1C4FD8F500B6E736 /* CitySelectViewController.m */,
+				040D48AC1C4FD8F500B6E736 /* CitySelectViewController.xib */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		04E5500B1C4D1B670051DCB5 = {
 			isa = PBXGroup;
 			children = (
@@ -125,20 +171,11 @@
 		04E550161C4D1B670051DCB5 /* clock */ = {
 			isa = PBXGroup;
 			children = (
+				045A89341C511AA8004CDFF6 /* Controller */,
+				045A89331C511A73004CDFF6 /* View */,
+				045A89321C511A65004CDFF6 /* Model */,
 				04E5501A1C4D1B670051DCB5 /* AppDelegate.h */,
 				04E5501B1C4D1B670051DCB5 /* AppDelegate.m */,
-				04E550511C4D237B0051DCB5 /* MainViewController.h */,
-				04E550521C4D237B0051DCB5 /* MainViewController.m */,
-				04E5504C1C4D1D100051DCB5 /* WordTimeViewController.h */,
-				04E5504D1C4D1D100051DCB5 /* WordTimeViewController.m */,
-				04E550541C4D30AE0051DCB5 /* WordTimeTableViewController.h */,
-				04E550551C4D30AE0051DCB5 /* WordTimeTableViewController.m */,
-				04F9FF691C4E6F6400E61A01 /* WordTimeTableViewCell.h */,
-				04F9FF6A1C4E6F6400E61A01 /* WordTimeTableViewCell.m */,
-				04F9FF6B1C4E6F6400E61A01 /* WordTimeTableViewCell.xib */,
-				040D48AA1C4FD8F500B6E736 /* CitySelectViewController.h */,
-				040D48AB1C4FD8F500B6E736 /* CitySelectViewController.m */,
-				040D48AC1C4FD8F500B6E736 /* CitySelectViewController.xib */,
 				04E550231C4D1B670051DCB5 /* Assets.xcassets */,
 				04E550281C4D1B670051DCB5 /* Info.plist */,
 				040D48A81C4FD0B200B6E736 /* Launch Screen.storyboard */,
@@ -281,6 +318,7 @@
 				040D48B01C4FDCB000B6E736 /* clock.png in Resources */,
 				040D48AE1C4FD8F500B6E736 /* CitySelectViewController.xib in Resources */,
 				04E550241C4D1B670051DCB5 /* Assets.xcassets in Resources */,
+				045A89391C511DD9004CDFF6 /* CitySelectNavigationBar.xib in Resources */,
 				040D48A91C4FD0B200B6E736 /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,11 +345,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				040D48AD1C4FD8F500B6E736 /* CitySelectViewController.m in Sources */,
+				045A89371C511DAB004CDFF6 /* CitySelectNavigationBar.m in Sources */,
 				04F9FF6C1C4E6F6400E61A01 /* WordTimeTableViewCell.m in Sources */,
 				04E5504F1C4D1D100051DCB5 /* WordTimeViewController.m in Sources */,
 				04E5501C1C4D1B670051DCB5 /* AppDelegate.m in Sources */,
 				04E550191C4D1B670051DCB5 /* main.m in Sources */,
 				04E550561C4D30AE0051DCB5 /* WordTimeTableViewController.m in Sources */,
+				045A89311C511A5F004CDFF6 /* WordTimeModel.m in Sources */,
 				04E550531C4D237B0051DCB5 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

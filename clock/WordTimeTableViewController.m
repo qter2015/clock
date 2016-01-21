@@ -141,16 +141,23 @@
 */
 
 /*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.row == 1)
+    {
+        return UITableViewCellEditingStyleInsert;
+    }
+    else{
+        return UITableViewCellEditingStyleDelete;
+    }
 }
 */
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    NSLog(@"row = %ld style = %d", indexPath.row, editingStyle);
+}
+
 
 
 // Override to support rearranging the table view.
@@ -165,6 +172,7 @@
     return YES;
 }
 */
+
 
 /*
 #pragma mark - Navigation
