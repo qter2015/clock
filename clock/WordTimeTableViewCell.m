@@ -7,18 +7,29 @@
 //
 
 #import "WordTimeTableViewCell.h"
+#import "WordZoneModel.h"
 
 @interface WordTimeTableViewCell()
-{
-    
-}
+@property (weak, nonatomic) IBOutlet UILabel *cityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *distanceTimeLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *clockImage;
 
 @end
 
 @implementation WordTimeTableViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    [super awakeFromNib];
+    [self setBackgroundColor:[UIColor blackColor]];
+    [self.cityLabel setTintColor:[UIColor whiteColor]];
+}
+
+- (void) showUIWithModel: (City *)city
+{
+    NSLog(@"%@", city.cityName);
+    self.cityLabel.text = city.cityName;
+    NSLog(@"%@", self.cityLabel);
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

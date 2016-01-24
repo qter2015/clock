@@ -7,53 +7,60 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CitySelectViewController">
             <connections>
-                <outlet property="SearchBar" destination="1dH-ku-YXC" id="IFb-r1-GSx"/>
-                <outlet property="cancelButton" destination="2rE-T6-dHA" id="lU3-Pf-HC0"/>
-                <outlet property="cityTableView" destination="qht-PD-cbX" id="bsO-hJ-bQs"/>
-                <outlet property="searchBar" destination="ECl-Se-1CL" id="x7d-8R-CTP"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="cancelButton" destination="2rE-T6-dHA" id="Y74-T6-li0"/>
+                <outlet property="cityTableView" destination="qht-PD-cbX" id="9IX-aZ-ns3"/>
+                <outlet property="coverView" destination="QZs-fY-pDZ" id="fQf-R0-MtD"/>
+                <outlet property="searchBar" destination="ECl-Se-1CL" id="iwF-7u-DkY"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="iC4-tr-JRs"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="780" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qht-PD-cbX">
-                    <rect key="frame" x="0.0" y="94" width="780" height="506"/>
+                    <rect key="frame" x="0.0" y="94" width="600" height="506"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="WhY-yf-UGu"/>
+                        <outlet property="delegate" destination="-1" id="L0U-d4-xs6"/>
+                    </connections>
                 </tableView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1dH-ku-YXC">
-                    <rect key="frame" x="0.0" y="0.0" width="780" height="94"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1dH-ku-YXC" userLabel="search bar view">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="94"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JWV-Gv-wel">
-                            <rect key="frame" x="0.0" y="93" width="780" height="1"/>
+                            <rect key="frame" x="0.0" y="93" width="600" height="1"/>
                             <color key="backgroundColor" red="0.78431372549019607" green="0.78431372549019607" blue="0.78823529411764703" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="7Sb-RU-lk2"/>
                                 <constraint firstAttribute="height" constant="1" id="89d-Zj-4Jm"/>
                             </constraints>
                         </view>
-                        <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="ECl-Se-1CL">
-                            <rect key="frame" x="0.0" y="49" width="742" height="44"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="44" id="EPs-vm-TM9"/>
-                            </constraints>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rE-T6-dHA">
-                            <rect key="frame" x="742" y="56" width="30" height="30"/>
+                            <rect key="frame" x="562" y="56" width="30" height="30"/>
                             <state key="normal" title="取消"/>
                             <connections>
-                                <action selector="cancelClick:" destination="-1" eventType="touchUpInside" id="Ko4-b8-E7d"/>
+                                <action selector="cancelClick:" destination="-1" eventType="touchUpInside" id="QhM-Mp-K3e"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择城市" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdH-dE-phc">
-                            <rect key="frame" x="362" y="22" width="56" height="17"/>
+                            <rect key="frame" x="272" y="22" width="56" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="ECl-Se-1CL">
+                            <rect key="frame" x="0.0" y="49" width="562" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="EPs-vm-TM9"/>
+                            </constraints>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="mve-d5-Lw5"/>
+                            </connections>
+                        </searchBar>
                     </subviews>
                     <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -71,18 +78,26 @@
                         <constraint firstAttribute="bottom" secondItem="ECl-Se-1CL" secondAttribute="bottom" constant="1" id="xgi-Gv-ipe"/>
                     </constraints>
                 </view>
+                <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QZs-fY-pDZ" userLabel="Cover view">
+                    <rect key="frame" x="0.0" y="94" width="600" height="506"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="QZs-fY-pDZ" firstAttribute="top" secondItem="1dH-ku-YXC" secondAttribute="bottom" id="0Ar-45-RsM"/>
                 <constraint firstAttribute="bottom" secondItem="qht-PD-cbX" secondAttribute="bottom" id="6GM-FB-iHD"/>
                 <constraint firstItem="qht-PD-cbX" firstAttribute="top" secondItem="1dH-ku-YXC" secondAttribute="bottom" id="AAr-o6-h2H"/>
                 <constraint firstItem="1dH-ku-YXC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BKO-mo-BBt"/>
+                <constraint firstAttribute="trailing" secondItem="QZs-fY-pDZ" secondAttribute="trailing" id="D65-no-1Iq"/>
+                <constraint firstItem="QZs-fY-pDZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="HDq-zM-pWD"/>
                 <constraint firstItem="qht-PD-cbX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Icr-Au-iYa"/>
                 <constraint firstItem="1dH-ku-YXC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hRE-0d-dzZ"/>
                 <constraint firstAttribute="trailing" secondItem="1dH-ku-YXC" secondAttribute="trailing" id="hzd-oa-JEO"/>
                 <constraint firstAttribute="trailing" secondItem="qht-PD-cbX" secondAttribute="trailing" id="lNc-Zs-7E6"/>
+                <constraint firstAttribute="bottom" secondItem="QZs-fY-pDZ" secondAttribute="bottom" id="t0G-Tb-brE"/>
             </constraints>
-            <point key="canvasLocation" x="434" y="411"/>
+            <point key="canvasLocation" x="625" y="398"/>
         </view>
     </objects>
 </document>

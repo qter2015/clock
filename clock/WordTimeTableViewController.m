@@ -9,13 +9,14 @@
 #import "WordTimeTableViewController.h"
 #import "WordTimeTableViewCell.h"
 #import "CitySelectViewController.h"
+#import "WordZoneModel.h"
 
-@interface WordTimeTableViewController (){
-    NSMutableArray *wordTimeArray;
-    
+@interface WordTimeTableViewController ()<CitySelectViewDelegate>{
     UIBarButtonItem *editButtonItem;
     UIBarButtonItem *addButtonItem;
 }
+
+@property (strong, nonatomic) NSMutableArray *wordZoneArray;
 
 @end
 
@@ -27,10 +28,19 @@
     //创建导航栏
     [self createNavBar];
     
-    wordTimeArray = [[NSMutableArray alloc]init];
-    for (int i = 0; i < 4; i++) {
-        [wordTimeArray addObject:[NSString stringWithFormat:@"MyCellDemon%i",i]];
+    _wordZoneArray = [[NSMutableArray alloc]init];
+    /*
+    for (NSInteger i = 0; i < 4; i++) {
+        City *city = [[City alloc] init];
+        city.cityName = [[NSString alloc] initWithFormat:@"北京%ld", i];
+        city.zoneString = [[NSString alloc] initWithFormat:@"北京时区%ld", i];
+        [wordZoneArray addObject:city];
     }
+    
+    [self saveUserData];
+     */
+    //取出城市
+    [self readUserData];
     
     //定义表格的行高
     self.tableView.rowHeight = 90.f;
@@ -63,14 +73,41 @@
     [titleView setText:@"世界时间"];
     [titleView setTextColor:blackColor];
     [self.navigationItem setTitleView:titleView];
+}
+
+//自定义数组 自定义对象
+- (void) saveUserData{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSData *encodemenulist = [NSKeyedArchiver archivedDataWithRootObject:_wordZoneArray];
+    [userDefaults setObject:encodemenulist forKey:@"wordTimeList"];
+}
+
+//取出自定义对象数组
+- (void) readUserData{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSData *saveMenulistDaate = [userDefaults objectForKey:@"wordTimeList"];
+    if (nil == saveMenulistDaate) {
+        NSMutableArray *menulistarry = [[NSMutableArray alloc]init];
+        _wordZoneArray = menulistarry;
+    }
+    else{
+        _wordZoneArray = (NSMutableArray *)[NSKeyedUnarchiver unarchiveObjectWithData:saveMenulistDaate];
+    }
+}
+
+//增加城市
+- (void) selectCity:(City *)city{
+    for (City *sourceCity in _wordZoneArray) {
+        if([sourceCity.cityName isEqualToString:city.cityName])
+            return;
+    }
     
-    //设置高度
-    CGRect navigationBarFrameOld = self.navigationController.navigationBar.frame;
-    NSLog(@"%f", navigationBarFrameOld.size.height);
-    navigationBarFrameOld.size.height = 100;
-    self.navigationController.navigationBar.frame = navigationBarFrameOld;
-    navigationBarFrameOld = self.navigationController.navigationBar.frame;
-    NSLog(@"%f", navigationBarFrameOld.size.height);
+    [_wordZoneArray addObject:city];
+    [self.tableView reloadData];
+}
+//删除城市
+- (void) removeCity: (City *)city{
+    
 }
 
 - (void) editButtonItemClick{
@@ -100,6 +137,7 @@
 - (void) addButtonItemClick{
     //从下而上弹出模态页面
     CitySelectViewController *citySelectVC = [[CitySelectViewController alloc]initWithNibName:@"CitySelectViewController" bundle:nil];
+    citySelectVC.delegate = self;
     
     [self presentViewController:citySelectVC animated:YES completion:nil];
 }
@@ -112,13 +150,11 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return [wordTimeArray count];
+    return [_wordZoneArray count];
 }
 
 
@@ -128,6 +164,9 @@
     WordTimeTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"WordTimeTableViewCell"];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    City *city = [_wordZoneArray objectAtIndex:indexPath.row];
+    [cell showUIWithModel:city];
     
     return cell;
 }
@@ -155,7 +194,7 @@
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    NSLog(@"row = %ld style = %d", indexPath.row, editingStyle);
+    NSLog(@"row = %ld style = %ld", indexPath.row, (long)editingStyle);
 }
 
 

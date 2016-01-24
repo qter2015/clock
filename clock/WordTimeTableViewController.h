@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WordZoneModel.h"
 
 @interface WordTimeTableViewController : UITableViewController
 
+- (void) addCity: (City *)city;
+- (void) removeCity: (City *)city;
 @end
