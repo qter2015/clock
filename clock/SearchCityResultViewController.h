@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class City;
+
+@protocol SearchCityResultDelegate <NSObject>
+
+- (void) selectCity: (City *)city;
+
+@end
+
 @interface SearchCityResultViewController : UITableViewController
 
 @property (copy, nonatomic) NSString *searchCityString;
+@property (weak, nonatomic) id<SearchCityResultDelegate> delegate;
 
 @end

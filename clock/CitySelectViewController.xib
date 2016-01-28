@@ -10,7 +10,9 @@
                 <outlet property="cancelButton" destination="2rE-T6-dHA" id="Y74-T6-li0"/>
                 <outlet property="cityTableView" destination="qht-PD-cbX" id="9IX-aZ-ns3"/>
                 <outlet property="coverView" destination="QZs-fY-pDZ" id="fQf-R0-MtD"/>
+                <outlet property="navigationBar" destination="1dH-ku-YXC" id="6NE-cu-Ch5"/>
                 <outlet property="searchBar" destination="ECl-Se-1CL" id="iwF-7u-DkY"/>
+                <outlet property="titleLabel" destination="zdH-dE-phc" id="UP9-dY-AEd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="iC4-tr-JRs"/>
             </connections>
         </placeholder>

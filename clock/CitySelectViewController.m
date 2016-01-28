@@ -14,6 +14,8 @@
 
 @interface CitySelectViewController ()<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 
+@property (weak, nonatomic) IBOutlet UIView *navigationBar;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) NSArray *wordZoneArray;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
@@ -115,6 +117,14 @@
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
     self.coverView.hidden = NO;
     [self.searchBar becomeFirstResponder];
+    
+    //改变顶部样式 --- 暂时设置uiview 无效
+    /*
+    self.titleLabel.hidden = YES;
+    CGRect srcRect = self.navigationBar.frame;
+    srcRect.size.height = 70;
+    [self.navigationBar setFrame:srcRect];
+     */
 }
 //搜索条结束编辑
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar{
@@ -130,12 +140,19 @@
         self.searchCityResultVC.view.hidden = YES;
     }
 }
+//实现搜索界面的代理
+- (void) selectCity:(City *)city{
+    [self.delegate selectCity:city];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 #pragma mark - 搜索结果控制器创建
 - (SearchCityResultViewController *)searchCityResultVC{
     //懒加载
     if (_searchCityResultVC == nil) {
         _searchCityResultVC = [[SearchCityResultViewController alloc] init];
+        //设置代理
+        _searchCityResultVC.delegate = self;
         
         //将搜索结果VC添加到当前控制器中
         [self.view addSubview:_searchCityResultVC.view];

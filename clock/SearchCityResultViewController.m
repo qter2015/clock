@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic) NSArray* citiesArray;
 @property (strong, nonatomic) NSArray* searchRelustArray;
+@property Boolean isSelect;
 
 @end
 
@@ -83,7 +84,11 @@
     return cell;
 }
 
-
+//select cell
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [_delegate selectCity:[_searchRelustArray objectAtIndex:indexPath.row]];
+    return indexPath;
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

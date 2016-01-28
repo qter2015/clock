@@ -11,7 +11,6 @@
 		040D48B01C4FDCB000B6E736 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 040D48AF1C4FDCB000B6E736 /* clock.png */; };
 		04260EB31C533629005523FE /* WordZoneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04260EB21C533629005523FE /* WordZoneModel.m */; };
 		04260EB61C534EE5005523FE /* CitySelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04260EB51C534EE5005523FE /* CitySelectViewController.m */; };
-		045A89311C511A5F004CDFF6 /* WordTimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 045A89301C511A5F004CDFF6 /* WordTimeModel.m */; };
 		04E4F7AE1C536CBD00941613 /* CitySelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E4F7AC1C536CBD00941613 /* CitySelectViewController.xib */; };
 		04E550191C4D1B670051DCB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E550181C4D1B670051DCB5 /* main.m */; };
 		04E5501C1C4D1B670051DCB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E5501B1C4D1B670051DCB5 /* AppDelegate.m */; };
@@ -51,8 +50,6 @@
 		04260EB21C533629005523FE /* WordZoneModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordZoneModel.m; sourceTree = "<group>"; };
 		04260EB41C534EE5005523FE /* CitySelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitySelectViewController.h; sourceTree = "<group>"; };
 		04260EB51C534EE5005523FE /* CitySelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitySelectViewController.m; sourceTree = "<group>"; };
-		045A892F1C511A5F004CDFF6 /* WordTimeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordTimeModel.h; sourceTree = "<group>"; };
-		045A89301C511A5F004CDFF6 /* WordTimeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordTimeModel.m; sourceTree = "<group>"; };
 		04E4F7AC1C536CBD00941613 /* CitySelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CitySelectViewController.xib; sourceTree = "<group>"; };
 		04E550141C4D1B670051DCB5 /* clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E550181C4D1B670051DCB5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -117,8 +114,6 @@
 		045A89321C511A65004CDFF6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				045A892F1C511A5F004CDFF6 /* WordTimeModel.h */,
-				045A89301C511A5F004CDFF6 /* WordTimeModel.m */,
 				04260EB11C533629005523FE /* WordZoneModel.h */,
 				04260EB21C533629005523FE /* WordZoneModel.m */,
 			);
@@ -367,7 +362,6 @@
 				04E550561C4D30AE0051DCB5 /* WordTimeTableViewController.m in Sources */,
 				04260EB31C533629005523FE /* WordZoneModel.m in Sources */,
 				04F57D3D1C54A66B00BC9525 /* UIView+AutoLayout.m in Sources */,
-				045A89311C511A5F004CDFF6 /* WordTimeModel.m in Sources */,
 				04E550531C4D237B0051DCB5 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

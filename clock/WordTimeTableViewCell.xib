@@ -48,13 +48,16 @@
                     <constraint firstAttribute="trailingMargin" secondItem="z9N-jN-Lbd" secondAttribute="trailing" constant="16" id="vZg-3s-CZd"/>
                 </constraints>
             </tableViewCellContentView>
+            <accessibility key="accessibilityConfiguration" identifier="WordTime">
+                <bool key="isElement" value="YES"/>
+            </accessibility>
             <connections>
                 <outlet property="cityLabel" destination="to5-N5-fT3" id="m9O-3t-Qxv"/>
                 <outlet property="clockImage" destination="z9N-jN-Lbd" id="P7c-lo-CwG"/>
                 <outlet property="distanceTimeLabel" destination="89P-Cn-W0f" id="S0a-UA-nRf"/>
                 <outlet property="timeLabel" destination="YRM-Je-C0f" id="xSS-Zn-y8e"/>
             </connections>
-            <point key="canvasLocation" x="550.5" y="237"/>
+            <point key="canvasLocation" x="707.5" y="258"/>
         </tableViewCell>
     </objects>
     <resources>

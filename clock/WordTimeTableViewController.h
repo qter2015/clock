@@ -11,6 +11,5 @@
 
 @interface WordTimeTableViewController : UITableViewController
 
-- (void) addCity: (City *)city;
-- (void) removeCity: (City *)city;
+
 @end

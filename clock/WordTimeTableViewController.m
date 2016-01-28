@@ -41,6 +41,8 @@
      */
     //取出城市
     [self readUserData];
+    //刷新编辑按钮状态
+    [self refreshEditButtonStatus];
     
     //定义表格的行高
     self.tableView.rowHeight = 90.f;
@@ -75,6 +77,19 @@
     [self.navigationItem setTitleView:titleView];
 }
 
+//刷新编辑按钮状态
+- (void) refreshEditButtonStatus{
+    if (_wordZoneArray.count == 0) {
+        self.navigationItem.leftBarButtonItem = nil;
+        //按钮状态
+        [editButtonItem setTitle:@"编辑"];
+        [self.tableView setEditing:NO animated:YES];
+    }
+    else {
+        self.navigationItem.leftBarButtonItem = editButtonItem;
+    }
+}
+
 //自定义数组 自定义对象
 - (void) saveUserData{
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -92,10 +107,16 @@
     }
     else{
         _wordZoneArray = (NSMutableArray *)[NSKeyedUnarchiver unarchiveObjectWithData:saveMenulistDaate];
+        
+        //批量添加
+        NSInteger count = _wordZoneArray.count;
+        for (NSInteger row = 0; row < count; row++) {
+            [self addCityForRow:row];
+        }
     }
 }
 
-//增加城市
+//选择城市
 - (void) selectCity:(City *)city{
     for (City *sourceCity in _wordZoneArray) {
         if([sourceCity.cityName isEqualToString:city.cityName])
@@ -103,11 +124,53 @@
     }
     
     [_wordZoneArray addObject:city];
-    [self.tableView reloadData];
-}
-//删除城市
-- (void) removeCity: (City *)city{
     
+    //增加城市
+    [self addCityForRow: (_wordZoneArray.count - 1)];
+}
+
+//增加城市
+- (void) addCityForRow: (NSInteger)row{
+    //刷新编辑按钮状态
+    [self refreshEditButtonStatus];
+    //添加进
+    [self.tableView beginUpdates];
+    [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+    [self.tableView endUpdates];
+    
+    //存入本地文件
+    [self saveUserData];
+}
+
+//删除城市
+- (void) deleteCityForRow: (NSInteger)row{
+    [_wordZoneArray removeObjectAtIndex:row];
+    //刷新编辑按钮状态
+    [self refreshEditButtonStatus];
+    
+    [self.tableView beginUpdates];
+    [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+    [self.tableView endUpdates];
+    
+    //存入本地文件
+    [self saveUserData];
+}
+//移动城市
+- (void) moveCityFromRow: (NSInteger)fromRow toRow:(NSInteger)toRow{
+    if (fromRow == toRow) {
+        return;
+    }
+    City *fromCity = [_wordZoneArray objectAtIndex:fromRow];
+    [_wordZoneArray removeObjectAtIndex:fromRow];
+    if (fromRow > toRow) {
+        [_wordZoneArray insertObject:fromCity atIndex:toRow];
+    }
+    else if(fromRow < toRow){
+        [_wordZoneArray insertObject:fromCity atIndex:toRow];
+    }
+    
+    //存入本地文件
+    [self saveUserData];
 }
 
 - (void) editButtonItemClick{
@@ -161,7 +224,7 @@
 //自定义cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    WordTimeTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"WordTimeTableViewCell"];
+    WordTimeTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"WordTimeTableViewCell" forIndexPath:indexPath];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
@@ -194,13 +257,16 @@
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    NSLog(@"row = %ld style = %ld", indexPath.row, (long)editingStyle);
+    if (editingStyle == UITableViewCellEditingStyleDelete){
+        [self deleteCityForRow:indexPath.row];
+    }
 }
 
 
-
+//移动
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+    [self moveCityFromRow:fromIndexPath.row toRow:toIndexPath.row];
 }
 
 

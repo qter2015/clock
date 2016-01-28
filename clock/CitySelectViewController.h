@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "WordZoneModel.h"
+#import "SearchCityResultViewController.h"
 
 @protocol CitySelectViewDelegate <NSObject>
 
@@ -15,7 +16,7 @@
 
 @end
 
-@interface CitySelectViewController : UIViewController
+@interface CitySelectViewController : UIViewController<SearchCityResultDelegate>
 
 @property (weak, nonatomic) id<CitySelectViewDelegate> delegate;
 
