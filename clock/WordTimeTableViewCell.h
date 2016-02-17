@@ -14,4 +14,6 @@
 
 - (void) showUIWithModel: (City *)city;
 
+- (void) cellClick;
+
 @end

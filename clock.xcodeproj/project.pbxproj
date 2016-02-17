@@ -11,6 +11,7 @@
 		040D48B01C4FDCB000B6E736 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 040D48AF1C4FDCB000B6E736 /* clock.png */; };
 		04260EB31C533629005523FE /* WordZoneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04260EB21C533629005523FE /* WordZoneModel.m */; };
 		04260EB61C534EE5005523FE /* CitySelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04260EB51C534EE5005523FE /* CitySelectViewController.m */; };
+		04A3365C1C64C2EB00B1DF7D /* ClockCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A3365B1C64C2EB00B1DF7D /* ClockCustom.m */; };
 		04E4F7AE1C536CBD00941613 /* CitySelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E4F7AC1C536CBD00941613 /* CitySelectViewController.xib */; };
 		04E550191C4D1B670051DCB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E550181C4D1B670051DCB5 /* main.m */; };
 		04E5501C1C4D1B670051DCB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E5501B1C4D1B670051DCB5 /* AppDelegate.m */; };
@@ -50,6 +51,8 @@
 		04260EB21C533629005523FE /* WordZoneModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordZoneModel.m; sourceTree = "<group>"; };
 		04260EB41C534EE5005523FE /* CitySelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitySelectViewController.h; sourceTree = "<group>"; };
 		04260EB51C534EE5005523FE /* CitySelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitySelectViewController.m; sourceTree = "<group>"; };
+		04A3365A1C64C2EB00B1DF7D /* ClockCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClockCustom.h; sourceTree = "<group>"; };
+		04A3365B1C64C2EB00B1DF7D /* ClockCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClockCustom.m; sourceTree = "<group>"; };
 		04E4F7AC1C536CBD00941613 /* CitySelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CitySelectViewController.xib; sourceTree = "<group>"; };
 		04E550141C4D1B670051DCB5 /* clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E550181C4D1B670051DCB5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -126,6 +129,8 @@
 				04F9FF691C4E6F6400E61A01 /* WordTimeTableViewCell.h */,
 				04F9FF6A1C4E6F6400E61A01 /* WordTimeTableViewCell.m */,
 				04F9FF6B1C4E6F6400E61A01 /* WordTimeTableViewCell.xib */,
+				04A3365A1C64C2EB00B1DF7D /* ClockCustom.h */,
+				04A3365B1C64C2EB00B1DF7D /* ClockCustom.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 				TargetAttributes = {
 					04E550131C4D1B670051DCB5 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 99QLU7P2CG;
 					};
 					04E5502C1C4D1B670051DCB5 = {
 						CreatedOnToolsVersion = 7.2;
@@ -355,6 +361,7 @@
 			files = (
 				04F9FF6C1C4E6F6400E61A01 /* WordTimeTableViewCell.m in Sources */,
 				04E5504F1C4D1D100051DCB5 /* WordTimeViewController.m in Sources */,
+				04A3365C1C64C2EB00B1DF7D /* ClockCustom.m in Sources */,
 				04F57D391C54A44100BC9525 /* SearchCityResultViewController.m in Sources */,
 				04260EB61C534EE5005523FE /* CitySelectViewController.m in Sources */,
 				04E5501C1C4D1B670051DCB5 /* AppDelegate.m in Sources */,
@@ -482,11 +489,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = clock/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Qter.clock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -494,11 +504,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = clock/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Qter.clock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

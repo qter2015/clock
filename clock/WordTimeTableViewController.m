@@ -45,7 +45,7 @@
     [self refreshEditButtonStatus];
     
     //定义表格的行高
-    self.tableView.rowHeight = 90.f;
+    self.tableView.rowHeight = 91.5f;
     [self.tableView registerNib:[UINib nibWithNibName:@"WordTimeTableViewCell" bundle:nil] forCellReuseIdentifier:@"WordTimeTableViewCell"];
     
     //tableview 背景色
@@ -226,6 +226,7 @@
     
     WordTimeTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"WordTimeTableViewCell" forIndexPath:indexPath];
     
+    //去除cell点击效果
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     City *city = [_wordZoneArray objectAtIndex:indexPath.row];
@@ -267,6 +268,12 @@
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
     [self moveCityFromRow:fromIndexPath.row toRow:toIndexPath.row];
+}
+
+//cell 点击
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    WordTimeTableViewCell * cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    [cell cellClick];
 }
 
 

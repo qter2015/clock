@@ -8,15 +8,18 @@
 
 #import "WordTimeTableViewCell.h"
 #import "WordZoneModel.h"
+#import "ClockCustom.h"
 
 static NSString *GLOBAL_TIMEFORMAT = @"YYYY-MM-dd HH:mm:ss";
 static NSString *GLOBAL_TIMEBASE = @"2012-01-01 00:00:00";
 
-@interface WordTimeTableViewCell()
+@interface WordTimeTableViewCell(){
+    Boolean isShowDigitalClock;
+}
 @property (weak, nonatomic) IBOutlet UILabel *cityLabel;
-@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *distanceTimeLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *clockImage;
+@property (weak, nonatomic) IBOutlet ClockCustom *analogClock;
+@property (weak, nonatomic) IBOutlet UILabel *digitalClock;
 
 @end
 
@@ -24,20 +27,47 @@ static NSString *GLOBAL_TIMEBASE = @"2012-01-01 00:00:00";
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
+    //初始化
+    isShowDigitalClock = YES;
+    [self showClockWithIsShowDigitalClock: isShowDigitalClock];
+    
+    //设置表盘背景为透明背景
+    [_analogClock setBackgroundColor:[UIColor clearColor]];
 }
 
 - (void) showUIWithModel: (City *)city
 {
-    self.cityLabel.text = city.cityName;    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    self.cityLabel.text = city.cityName;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"HH:mm"];
     [formatter setTimeZone:[NSTimeZone timeZoneWithName:city.zoneString]];
     NSString *timeStr = [formatter stringFromDate:[NSDate date]];
-    self.timeLabel.text = timeStr;
+    self.digitalClock.text = timeStr;
     
     [formatter setTimeZone:[NSTimeZone timeZoneWithName:city.zoneString]];
     NSDate *bdate = [formatter dateFromString:timeStr];
     NSString *distanceStr = [self getDistanceToNowForOtherDate: bdate];
     self.distanceTimeLabel.text = distanceStr;
+}
+
+//
+- (void) showClockWithIsShowDigitalClock: (Boolean)isShow{
+    if (isShow) {
+        _digitalClock.hidden = YES;
+        _analogClock.hidden = NO;
+    }
+    else{
+        _digitalClock.hidden = NO;
+        _analogClock.hidden = YES;
+    }
+}
+
+//cell click
+- (void) cellClick{
+    //初始化
+    isShowDigitalClock = !isShowDigitalClock;
+    [self showClockWithIsShowDigitalClock: isShowDigitalClock];
 }
 
 //获取两个时间相差多少
