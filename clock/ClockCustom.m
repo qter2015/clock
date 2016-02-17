@@ -78,11 +78,11 @@
     
     NSLog(@"%f", sinf(12 * 30 * PI / 180));
     
+    //绘制刻度
     for (NSInteger i = 1; i <= hourCount; i++) {
         CGPoint originPoint = CGPointMake(rect.size.width / 2, rect.size.height / 2);
         CGFloat x = originPoint.x + sinf(angle * i * PI / 180) * textRadius;
         CGFloat y = originPoint.y - cosf(angle * i * PI / 180) * textRadius;
-        CGPoint textPoint = CGPointMake(x, y);
         NSString * text = [NSString stringWithFormat:@"%ld", i];
         
         CGContextSetFillColorWithColor(con, [self.clockTextColor CGColor]);
